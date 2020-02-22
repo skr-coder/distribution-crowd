@@ -1,0 +1,13 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: redis-provider
+  redis:
+    host: 192.168.137.100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+  instance:
+    prefer-ip-address: true
