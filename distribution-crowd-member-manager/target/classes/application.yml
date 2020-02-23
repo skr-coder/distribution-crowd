@@ -1,0 +1,17 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: member-manager
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+  instance:
+    prefer-ip-address: true
+    
+crowd:
+  short:
+    message:
+     appCode: 这里填写自己的短信APIcode
