@@ -77,6 +77,37 @@
     id, projectid, type, supportmoney, content, count, signalpurchase, purchase, freight, 
     invoice, returndate, describ_pic_path
   </sql>
+    <insert id="insertBatch">
+  	insert into t_return (
+  	  projectid, 
+  	  type, 
+      supportmoney, 
+      content, 
+      count, 
+      signalpurchase, 
+      purchase, 
+      freight, 
+      invoice, 
+      returndate, 
+      describ_pic_path
+      )
+    values 
+    <foreach collection="returnPOList" item="returnPO" separator=",">
+    	(
+    	  #{returnPO.projectid,jdbcType=INTEGER},                           
+    	  #{returnPO.type,jdbcType=TINYINT},                                
+	      #{returnPO.supportmoney,jdbcType=INTEGER},                        
+	      #{returnPO.content,jdbcType=VARCHAR},                             
+	      #{returnPO.count,jdbcType=INTEGER},                               
+	      #{returnPO.signalpurchase,jdbcType=INTEGER},                      
+	      #{returnPO.purchase,jdbcType=INTEGER},                            
+	      #{returnPO.freight,jdbcType=INTEGER},                             
+	      #{returnPO.invoice,jdbcType=TINYINT},                             
+	      #{returnPO.returndate,jdbcType=INTEGER},                          
+	      #{returnPO.describPicPath,jdbcType=VARCHAR}                       
+	    )
+    </foreach>
+  </insert>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wcan.scms.entity.po.ReturnPOExample" >
     select
     <if test="distinct" >

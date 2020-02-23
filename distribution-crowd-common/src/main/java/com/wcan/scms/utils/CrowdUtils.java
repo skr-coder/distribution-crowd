@@ -11,6 +11,16 @@ import org.apache.http.util.EntityUtils;
 import com.aliyun.api.gateway.demo.util.HttpUtils;
 
 public class CrowdUtils {
+	
+	/**
+	 * 根据不同前缀生成Redis中保存数据的key
+	 * @param prefix
+	 * @return
+	 */
+	public static String generateRedisKeyByPrefix(String prefix) {
+		return prefix + UUID.randomUUID().toString().replaceAll("-", "");
+	}
+	
 	/**
 	 * 生成用户登录成功后使用的token
 	 * 

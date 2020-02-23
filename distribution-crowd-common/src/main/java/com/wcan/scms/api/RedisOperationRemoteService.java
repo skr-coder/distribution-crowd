@@ -10,14 +10,6 @@ import com.wcan.scms.entity.ResultEntity;
 public interface RedisOperationRemoteService {
 	
 	/**
-	 * 
-	 * @param memberSignToken
-	 * @return
-	 */
-	@RequestMapping("/retrieve/token/of/signed/member/remote")
-	ResultEntity<String> retrieveTokenOfSignedMemberRemote(@RequestParam("memberSignToken") String memberSignToken);
-
-	/**
 	 * 将字符串类型的键值对保存到Redis时调用的远程方法
 	 * @param normalKey
 	 * @param normalValue

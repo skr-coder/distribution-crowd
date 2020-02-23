@@ -27,4 +27,6 @@ public interface ReturnPOMapper {
     int updateByPrimaryKeySelective(ReturnPO record);
 
     int updateByPrimaryKey(ReturnPO record);
+
+    void insertBatch(@Param("returnPOList") List<ReturnPO> returnPOList);
 }

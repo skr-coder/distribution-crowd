@@ -67,6 +67,11 @@
   <sql id="Base_Column_List" >
     id, name, remark
   </sql>
+    <insert id="insertRelationshipBatch">
+  	insert into t_project_type(projectid, typeid)
+  	values
+  	<foreach collection="typeIdList" item="typeId" separator=",">(#{projectId},#{typeId})</foreach>
+  </insert>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wcan.scms.entity.po.TypePOExample" >
     select
     <if test="distinct" >

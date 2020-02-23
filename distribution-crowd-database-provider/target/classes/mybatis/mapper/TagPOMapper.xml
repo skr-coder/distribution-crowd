@@ -67,6 +67,11 @@
   <sql id="Base_Column_List" >
     id, pid, name
   </sql>
+   <insert id="insertRelationshipBatch">
+  	insert into t_project_tag(projectid,tagid)
+  	values
+  	<foreach collection="tagIdList" item="tagId" separator=",">(#{projectId},#{tagId})</foreach>
+  </insert> 
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wcan.scms.entity.po.TagPOExample" >
     select
     <if test="distinct" >

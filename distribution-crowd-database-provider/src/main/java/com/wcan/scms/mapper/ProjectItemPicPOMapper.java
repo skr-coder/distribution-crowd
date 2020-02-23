@@ -27,4 +27,6 @@ public interface ProjectItemPicPOMapper {
     int updateByPrimaryKeySelective(ProjectItemPicPO record);
 
     int updateByPrimaryKey(ProjectItemPicPO record);
+
+    void insertBatch(@Param("projectItemPicPOList") List<ProjectItemPicPO> projectItemPicPOList);
 }

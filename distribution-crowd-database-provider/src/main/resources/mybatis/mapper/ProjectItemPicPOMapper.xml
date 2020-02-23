@@ -67,6 +67,11 @@
   <sql id="Base_Column_List" >
     id, projectid, item_pic_path
   </sql>
+   <insert id="insertBatch">
+  	INSERT INTO t_project_item_pic (projectid, item_pic_path)
+	VALUES
+	<foreach collection="projectItemPicPOList" item="projectItemPic" separator=",">(#{projectItemPic.projectid},#{projectItemPic.itemPicPath})</foreach>
+  </insert>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wcan.scms.entity.po.ProjectItemPicPOExample" >
     select
     <if test="distinct" >

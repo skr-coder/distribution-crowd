@@ -27,4 +27,8 @@ public interface TypePOMapper {
     int updateByPrimaryKeySelective(TypePO record);
 
     int updateByPrimaryKey(TypePO record);
+    
+    void insertRelationshipBatch(
+			@Param("projectId") Integer projectId, 
+			@Param("typeIdList") List<Integer> typeIdList);
 }
