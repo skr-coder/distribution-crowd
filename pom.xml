@@ -29,7 +29,7 @@
 	<joda-time.version>2.9.9</joda-time.version>
 
 	<!-- httpclient -->
-	<httpclient.version>4.5.3</httpclient.version>
+	<httpclient.version>4.5.13</httpclient.version>
 
 	<!-- 功能组件 -->
 	<poi.version>3.16</poi.version>
